@@ -7,8 +7,6 @@ services:
       - "2022:2022"
     tty: true
     restart: always
-    networks:
-      - proxy
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:s1.node.occultus.network"
