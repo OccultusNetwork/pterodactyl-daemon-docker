@@ -19,9 +19,10 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./config/:/srv/daemon/config/"
       - "/home/daemon-data:/home/daemon-data/"
-      - "/tmp:/tmp"
+      - "/var/lib/docker/containers/:/var/lib/docker/containers/"
+      - "/tmp/pterodactyl/:/tmp/pterodactyl/"
 
 networks:
-  proxy:
+  default:
     external:
       name: proxy
