@@ -3,6 +3,7 @@ services:
   daemon:
     hostname: daemon
     build: daemon
+    ports:
       - "2022:2022"
     tty: true
     restart: always
