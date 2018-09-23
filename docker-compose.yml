@@ -19,6 +19,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./config/:/srv/daemon/config/"
       - "/home/daemon-data:/home/daemon-data/"
+      - "/tmp:/tmp"
 
 networks:
   proxy:
