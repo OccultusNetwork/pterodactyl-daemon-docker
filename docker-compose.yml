@@ -18,7 +18,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./config/:/srv/daemon/config/"
-      - "./server-data/:/srv/daemon-data/"
+      - "/home/daemon-data:/home/daemon-data/"
 
 networks:
   proxy:
