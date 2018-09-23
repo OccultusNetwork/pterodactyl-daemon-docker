@@ -4,22 +4,10 @@ services:
     hostname: daemon
     build: daemon
       - "2022:2022"
+      - "8080:8080"
     tty: true
     restart: always
-    networks:
-      - proxy
-    labels:
-      - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:s1.node.occultus.network"
-      - "traefik.frontend.passHostHeader=true"
-      - "traefik.port=8080"
-      - "traefik.docker.network=proxy"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./config/:/srv/daemon/config/"
       - "./server-data/:/srv/daemon-data/"
-
-networks:
-  proxy:
-    external:
-      name: proxy
