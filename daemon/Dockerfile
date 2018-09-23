@@ -5,7 +5,7 @@ MAINTAINER Michael Parker, <docker@parkervcp.com>
 WORKDIR /srv/daemon
 
 RUN apk update \
- && apk add openssl make gcc g++ python linux-headers paxctl gnupg zip unzip git tar \
+ && apk add openssl make gcc g++ python linux-headers paxctl gnupg zip unzip git tar coreutils \
  && wget -qO- https://github.com/pterodactyl/daemon/releases/download/v0.6.5/daemon.tar.gz | tar xvz -C /srv/ \
  && mv /srv/daemon-*/* /srv/daemon \
  && npm install --production \
